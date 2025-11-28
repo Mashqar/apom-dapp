@@ -209,11 +209,6 @@
     pointer-events: none;
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-  }
-
   @keyframes glow {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
@@ -221,5 +216,831 @@
 
   .glow-animation {
     animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Animation Keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--nft) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--nft) / 0.6);
+    }
+  }
+
+  @keyframes borderGlow {
+    0%, 100% {
+      border-color: hsl(var(--border));
+      box-shadow: 0 0 0 0 hsl(var(--nft) / 0);
+    }
+    50% {
+      border-color: hsl(var(--nft) / 0.5);
+      box-shadow: 0 0 20px hsl(var(--nft) / 0.3);
+    }
+  }
+
+  @keyframes emojiBounce {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-10px) scale(1.1);
+    }
+  }
+
+  @keyframes emojiRotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes counterUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* New Enhanced Keyframes */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8) rotateY(-10deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
+    }
+  }
+
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(1.05);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    66% {
+      transform: translateY(10px) translateX(-10px);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes pricePulse {
+    0%, 100% {
+      transform: scale(1);
+      color: inherit;
+    }
+    50% {
+      transform: scale(1.1);
+      color: hsl(var(--nft));
+    }
+  }
+
+  @keyframes badgeShake {
+    0% {
+      transform: translateX(0) rotate(0deg) scale(1);
+    }
+    15% {
+      transform: translateX(-3px) rotate(-3deg) scale(1.02);
+    }
+    30% {
+      transform: translateX(-4px) rotate(-4deg) scale(1.03);
+    }
+    45% {
+      transform: translateX(-5px) rotate(-5deg) scale(1.04);
+    }
+    60% {
+      transform: translateX(5px) rotate(5deg) scale(1.04);
+    }
+    75% {
+      transform: translateX(4px) rotate(4deg) scale(1.03);
+    }
+    90% {
+      transform: translateX(3px) rotate(3deg) scale(1.02);
+    }
+    100% {
+      transform: translateX(0) rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes checkmark {
+    0% {
+      transform: scale(0) rotate(45deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+      transform: scale(1) rotate(45deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes buttonPress {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes iconRotate {
+    from {
+      transform: rotate(0deg) scale(1);
+    }
+    to {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes cardRipple {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heartPop {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.3);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes cardDepth {
+    0% {
+      transform: translateY(0) scale(1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      transform: translateY(-16px) scale(1.04);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 
+                  0 0 60px hsl(var(--nft) / 0.5);
+    }
+  }
+
+  @keyframes wave {
+    0%, 100% {
+      transform: translateX(0) scaleY(1);
+    }
+    50% {
+      transform: translateX(25%) scaleY(0.8);
+    }
+  }
+
+  @keyframes slideInUpSpring {
+    0% {
+      opacity: 0;
+      transform: translateY(60px) scale(0.9);
+    }
+    60% {
+      transform: translateY(-5px) scale(1.02);
+    }
+    80% {
+      transform: translateY(2px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeInScaleRotate {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) rotateY(-15deg);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes priceFlash {
+    0%, 100% {
+      color: inherit;
+      transform: scale(1);
+    }
+    50% {
+      color: hsl(var(--nft));
+      transform: scale(1.15);
+      text-shadow: 0 0 20px hsl(var(--nft) / 0.8);
+    }
+  }
+
+  @keyframes scrollProgress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes iconDance {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translateY(-8px) rotate(-8deg) scale(1.05);
+    }
+    50% {
+      transform: translateY(-4px) rotate(0deg) scale(1.1);
+    }
+    75% {
+      transform: translateY(-8px) rotate(8deg) scale(1.05);
+    }
+  }
+
+  .animate-counter-up {
+    animation: counterUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Animation Utility Classes */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-down {
+    animation: slideInDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+  }
+
+  .animate-blur-in {
+    animation: blurIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  .animate-border-glow {
+    animation: borderGlow 2s ease-in-out infinite;
+  }
+
+  .animate-emoji-bounce {
+    animation: emojiBounce 2s ease-in-out infinite;
+  }
+
+  .animate-emoji-rotate {
+    animation: emojiRotate 20s linear infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 2000px 100%;
+    animation: shimmer 2s infinite;
+    will-change: background-position;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-price-pulse {
+    animation: pricePulse 0.6s ease-out;
+  }
+
+  .animate-badge-shake {
+    animation: badgeShake 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-checkmark {
+    animation: checkmark 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-button-press {
+    animation: buttonPress 0.2s ease-out;
+  }
+
+  .animate-icon-rotate {
+    animation: iconRotate 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% auto;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  .animate-heart-pop {
+    animation: heartPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .animate-card-depth {
+    animation: cardDepth 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slide-in-up-spring {
+    animation: slideInUpSpring 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-scale-rotate {
+    animation: fadeInScaleRotate 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .animate-price-flash {
+    animation: priceFlash 0.6s ease-out;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 8s ease-in-out infinite;
+  }
+
+  .animate-icon-dance {
+    animation: iconDance 5s ease-in-out infinite;
+  }
+
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, box-shadow;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-16px) scale(1.04) rotateX(3deg);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 
+                0 0 60px hsl(var(--nft) / 0.5),
+                0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-3d-tilt {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    backface-visibility: hidden;
+  }
+
+  .hover-3d-tilt:hover {
+    transform: perspective(1000px) rotateX(6deg) rotateY(6deg) scale(1.06);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6),
+                0 0 50px hsl(var(--nft) / 0.4),
+                inset 0 0 60px hsl(var(--nft) / 0.1);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: box-shadow;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 40px hsl(var(--nft) / 0.6);
+  }
+
+  .hover-magnetic {
+    --magnetic-x: 0px;
+    --magnetic-y: 0px;
+    transform: translate(var(--magnetic-x), var(--magnetic-y)) scale(1);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .hover-magnetic:hover {
+    transform: translate(var(--magnetic-x), var(--magnetic-y)) scale(1.05);
+  }
+
+  .hover-shimmer {
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  .hover-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    transform: translateX(0);
+  }
+
+  .hover-shimmer:hover::before {
+    transform: translateX(200%);
+  }
+
+  .hover-ripple-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-ripple-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s, opacity 0.6s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hover-ripple-card:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    animation: cardRipple 0.6s ease-out;
+  }
+
+  /* Stagger animation delays - Enhanced with easing offsets */
+  .stagger-1 { 
+    animation-delay: 0.08s; 
+    animation-fill-mode: both;
+  }
+  .stagger-2 { 
+    animation-delay: 0.16s; 
+    animation-fill-mode: both;
+  }
+  .stagger-3 { 
+    animation-delay: 0.24s; 
+    animation-fill-mode: both;
+  }
+  .stagger-4 { 
+    animation-delay: 0.32s; 
+    animation-fill-mode: both;
+  }
+  .stagger-5 { 
+    animation-delay: 0.40s; 
+    animation-fill-mode: both;
+  }
+  .stagger-6 { 
+    animation-delay: 0.48s; 
+    animation-fill-mode: both;
+  }
+
+  /* Ripple effect */
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .ripple-effect:active::after {
+    width: 300px;
+    height: 300px;
+    animation: ripple 0.6s ease-out;
+  }
+
+  /* Badge hover effect */
+  .badge-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow, background-color;
+  }
+
+  .badge-hover:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Price highlight */
+  .price-highlight {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+
+  .price-highlight:hover {
+    color: hsl(var(--nft));
+    text-shadow: 0 0 10px hsl(var(--nft) / 0.5);
+  }
+
+  /* Enhanced animated background */
+  .animated-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 10% 10%, hsl(var(--nft) / 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, hsl(var(--primary) / 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, hsl(var(--gaming) / 0.05) 0%, transparent 60%);
+    animation: float 25s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      hsl(var(--primary)), 
+      hsl(var(--nft)), 
+      hsl(var(--gaming))
+    );
+    background-size: 200% 100%;
+    z-index: 9999;
+    transform-origin: left;
+    animation: gradientShift 3s ease infinite;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Enhanced card hover with depth layers */
+  .hover-depth-card {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-style: preserve-3d;
+    perspective: 1200px;
+  }
+
+  .hover-depth-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, 
+      hsl(var(--nft) / 0.3), 
+      hsl(var(--primary) / 0.3)
+    );
+    border-radius: inherit;
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+
+  .hover-depth-card:hover::before {
+    opacity: 1;
+  }
+
+  .hover-depth-card:hover {
+    transform: translateY(-16px) scale(1.04) rotateX(3deg) rotateY(2deg);
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.7),
+                0 0 80px hsl(var(--nft) / 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Enhanced favorite button */
+  .favorite-button {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .favorite-button:hover {
+    transform: scale(1.15);
+  }
+
+  .favorite-button:active {
+    animation: heartPop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Price change indicator */
+  .price-change-indicator {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .price-change-indicator::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      transparent,
+      hsl(var(--nft) / 0.3),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .price-change-indicator.updated::after {
+    transform: translateX(100%);
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

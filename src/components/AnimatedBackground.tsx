@@ -40,6 +40,8 @@ const AnimatedBackground: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Visibility change handler will be defined after animate function
+
     // Initialize particles
     const initParticles = () => {
       const particles: Particle[] = [];
@@ -62,8 +64,10 @@ const AnimatedBackground: React.FC = () => {
 
     initParticles();
 
-    // Animation loop
+    // Animation loop - defined as a variable so it can be referenced in visibility handler
+    let isAnimating = true;
     const animate = () => {
+      if (!isAnimating || document.hidden) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Create gradient background
@@ -195,16 +199,41 @@ const AnimatedBackground: React.FC = () => {
         ctx.fillRect(x - 1, y, 2, 20);
       }
 
-      animationRef.current = requestAnimationFrame(animate);
+      if (isAnimating && !document.hidden) {
+        animationRef.current = requestAnimationFrame(animate);
+      }
     };
 
+    // Pause animation when tab is hidden
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isAnimating = false;
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+          animationRef.current = undefined;
+        }
+      } else {
+        // Resume animation
+        isAnimating = true;
+        if (!animationRef.current) {
+          animationRef.current = requestAnimationFrame(animate);
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Start animation
     animate();
 
     return () => {
+      isAnimating = false;
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
+        animationRef.current = undefined;
       }
     };
   }, []);
